@@ -10,7 +10,7 @@ const Add = () => {
     name:"",
     description:"",
     price:"",
-    category:""
+    category:"Salad"
   })
 
   const onChangeHandler = (e) => {
