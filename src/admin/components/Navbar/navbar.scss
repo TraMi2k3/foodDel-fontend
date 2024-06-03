@@ -1,0 +1,52 @@
+.navbarad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+
+    .logo {
+        width: max(13vw, 200px);
+    }
+
+    .info {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: max(1.3vw, 16px);
+        .profile {
+            width: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .pad {
+            position: absolute;
+            top: 97%;
+            right: 12px;
+            padding: 10px 24px;
+            background-color: transparent;
+        }
+        .logout {
+            position: absolute;
+            right: 0;
+            top: 120%;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            img {
+                width: 20px;
+            }
+
+            &:hover{
+                color: tomato;
+            }
+        }
+
+        &:hover .logout {
+            display: flex;
+        }
+    } 
+}
+
