@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './list.scss';
 import { toast } from 'react-toastify';
 import requestax from '../../../axios';
+import { authContext } from '../../../context/authContext';
 
 const List = () => {
+  const {url} = useContext(authContext)
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
@@ -45,7 +47,7 @@ const List = () => {
         {list.map((item, index) => {
           return (
             <div key={index} className="table-format">
-              <img src={process.env.BACKEND_URL+'/images/'+item.image} alt="" />
+              <img src={url+'/images/'+item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{item.price}</p>

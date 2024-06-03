@@ -3,6 +3,7 @@ import './comment.scss';
 import moment from "moment";
 import axios from 'axios';
 import { authContext } from '../../../context/authContext';
+import requestax from '../../../axios';
 
 const Comment = ({ foodId }) => {
   const { url, currentUser } = useContext(authContext);
@@ -11,13 +12,13 @@ const Comment = ({ foodId }) => {
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => {
-    const response = await axios.get(url + "/api/comment?foodId=" + foodId);
+    const response = await requestax.get("/comment?foodId=" + foodId);
     setComments(response.data.data)
   }
 
   const addComments = async (foodId, desc) => {
     if (token) {
-      await axios.post(url + "/api/comment/add", { foodId, desc }, { headers: { token } })
+      await requestax.post("/comment/add", { foodId, desc }, { headers: { token } })
     }
     fetchComments()
   }
@@ -25,7 +26,7 @@ const Comment = ({ foodId }) => {
   const deleteComment = async (commentId) => {
     setComments((prev) => (prev.filter(cmt => !(cmt._id===commentId && cmt.username===currentUser.name))));
     if (token) {
-      await axios.post(url + "/api/comment/del/"+ commentId,{foodId}, { headers: { token } })
+      await requestax.post("/comment/del/"+ commentId,{foodId}, { headers: { token } })
     }
   }
 

@@ -5,8 +5,10 @@ import { storeContext } from '../../context/storeContext';
 import FoodItem from '../../components/FoodItem/FoodItem';
 import Comment from '../../components/Comment/Comment';
 import requestax from '../../../axios';
+import { authContext } from '../../../context/authContext';
 
 const FoodItemDetail = () => {
+  const {url} = useContext(authContext)
   const {addToCartWithNumber, food_list} = useContext(storeContext)
   const [foodItem, setFoodItem ] = useState({})
   const [quantities, setQuantities] = useState(0);
@@ -34,7 +36,7 @@ const FoodItemDetail = () => {
   return (
     <div className='foodDetail'>
       <div className="main-product">
-        <img src={process.env.BACKEND_URL+"/images/"+foodItem.image} alt="" />
+        <img src={url+"/images/"+foodItem.image} alt="" />
         <div className="info">
           <h1>{foodItem.name}</h1>
           <h3>{foodItem.price}$</h3>

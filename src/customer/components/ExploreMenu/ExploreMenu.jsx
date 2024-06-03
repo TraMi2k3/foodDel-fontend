@@ -1,17 +1,7 @@
 import './exploremenu.scss';
 import { menu_list } from '../../asset/asset'; 
-import Slider from "react-slick";
-//import "slick-carousel/slick/slick.css";
-//import "slick-carousel/slick/slick-theme.css";
 
 const ExploreMenu = ({ category, setCategory }) => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-    };
     return (
         <div className="explore-menu" id="explore-menu">
             <h1>Explore our menu</h1>
