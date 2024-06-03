@@ -1,1 +1,0 @@
-export {default as layoutCustomer} from './Layout';
