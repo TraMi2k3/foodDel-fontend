@@ -51,9 +51,9 @@ const Login = () => {
                     <span onClick={() => navigate('/')}>x</span>
                 </div>
                 <div className="inputs">
-                    <input name='name' value={data.name} onChange={onChangeHandler} type="text" placeholder="Your name" required />
-                    {curState === 'Sign Up' && <input name='email' value={data.email} onChange={onChangeHandler} type="email" placeholder="Your email" required />}
-                    <input name='password' value={data.password} onChange={onChangeHandler} type="password" placeholder="Your password" required />
+                    <input name='name' value={data.name} onChange={onChangeHandler} type="text" placeholder="Username   customer || admin" required />
+                    {curState === 'Sign Up' && <input name='email' value={data.email} onChange={onChangeHandler} type="email" placeholder="Email" required />}
+                    <input name='password' value={data.password} onChange={onChangeHandler} type="password" placeholder="Password    12345678" required />
                 </div>
                 <button type='submit'>{curState === 'Sign Up' ? 'Create account' : 'Login'}</button>
                 <div className="condition">
