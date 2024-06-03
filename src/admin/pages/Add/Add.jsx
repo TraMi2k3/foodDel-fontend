@@ -43,7 +43,7 @@ const Add = () => {
   }
 
   return (
-    <div className="add">
+    <div className="addfood">
       <form className="flex-col" onSubmit={onSubmitHandler}>
         <div className="img-upload flex-col">
           <p>Upload Image</p>

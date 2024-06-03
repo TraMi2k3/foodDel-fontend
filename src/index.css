@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-:root {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+
 html {
-    font-size: 62.5%;
-    font-family: 'Outfit', sans-serif;
+  font-size: 62.5%;
+  font-family: 'Outfit', sans-serif;
 }
 
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+  background-color: #fcfcff;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 button,
@@ -24,13 +28,20 @@ input,
     border: none;
 }
 
-a {
-    text-decoration: none;
-    color: #686363;
+hr {
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
 }
 
-button {
-    cursor: pointer;
+.app-content {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @keyframes fadeIn {

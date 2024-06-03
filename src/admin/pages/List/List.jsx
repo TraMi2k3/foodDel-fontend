@@ -34,7 +34,7 @@ const List = () => {
   },[])
 
   return (
-    <div className="list add flex-col">
+    <div className="listF add flex-col">
       <p>All Foods List</p>
       <div className="table">
         <div className="table-format title">
